@@ -1,12 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-using LexiconPluralsight;
+﻿using LexiconPluralsight;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Create an employee");
+Console.WriteLine("-----------------");
+Console.WriteLine();
 
-int amount = 23;
-int months = 10;
-int yearlyWage = Utilities.CalculateYearlyWage(amount, months);
+//Instaciate employee
+Employee jane = new Employee("Jane", "Doe", new DateTime(1950, 1, 30), 25);
 
-Console.WriteLine($"Yearly wage : {yearlyWage}");
-Console.ReadLine();
-
+jane.DisplayEmployeeDetails();
+jane.PerformWork();
+jane.PerformWork();
+jane.PerformWork();
+jane.PerformWork(12);
+double recivedWageJane = jane.ReceiveWage(true);
+Console.WriteLine($"Wage paid (message from Program): {recivedWageJane}");

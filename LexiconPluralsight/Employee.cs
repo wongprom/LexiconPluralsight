@@ -10,21 +10,44 @@ namespace LexiconPluralsight
     {
         public string firstName = String.Empty;
         public string lastName = String.Empty;
-        public double numberOfHoursWorked;
+        public int numberOfHoursWorked;
         public double wage;
-        public double hourlyWage;
+        public double hourlyRate;
         public DateTime birthDay;
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
+        //Constructor
+        public Employee(string first, string last, DateTime bd, double rate) 
+        {
+            firstName = first;
+            lastName = last;
+            birthDay = bd;
+            hourlyRate = rate;
+        }
+
+        //Constructor overload
+        public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0)
+        {
+            
+        }
+
         //Methods
         public void PerformWork()
         {
-            PerformWork(MINIMAL_HOURS_WORKED_UNIT);
+            PerformWork(1);
+           
         }
+        //Overload Method
+        public void PerformWork(int numberOfHours)
+        {
+            numberOfHoursWorked += numberOfHours;
+            Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHours} hour(s)!");
+        }
+       
         public double ReceiveWage(bool resetHours = true)
         {
-            wage = numberOfHoursWorked * hourlyWage;
+            wage = numberOfHoursWorked * hourlyRate;
             Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hours of work.");
             if (resetHours)
             {
@@ -35,17 +58,14 @@ namespace LexiconPluralsight
 
         public void DisplayEmployeeDetails()
         {
-            Console.Write($"First name: {firstName}");
-            Console.Write($"Last name: {lastName}");
-            Console.Write($"Birthday: {birthDay.ToShortDateString()}");
+            Console.WriteLine($"First name: {firstName}");
+            Console.WriteLine($"Last name: {lastName}");
+            Console.WriteLine($"Birthday: {birthDay.ToShortDateString()}");
+            Console.WriteLine($"Hour Rate: {hourlyRate}");
         }
 
-        //Overload Method
-        public void PerformWork(int numberOfHoursWorked)
-        {
-            numberOfHoursWorked += numberOfHoursWorked;
-            Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHoursWorked} hour (s)!");
-        }
+        
+      
 
         
     }
