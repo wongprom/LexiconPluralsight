@@ -10,7 +10,7 @@ namespace LexiconPluralsight
     {
         public string firstName = String.Empty;
         public string lastName = String.Empty;
-        public int numberOfHoursWorked;
+        public int numberOfHoursWorked = 0;
         public double wage;
         public double hourlyRate;
         public DateTime birthDay;
@@ -28,14 +28,13 @@ namespace LexiconPluralsight
 
         //Constructor overload
         public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0)
-        {
-            
+        {    
         }
 
         //Methods
         public void PerformWork()
         {
-            PerformWork(1);
+            PerformWork(MINIMAL_HOURS_WORKED_UNIT);
            
         }
         //Overload Method
@@ -44,7 +43,17 @@ namespace LexiconPluralsight
             numberOfHoursWorked += numberOfHours;
             Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHours} hour(s)!");
         }
-       
+
+        public int CalculateBonus(int bonus)
+        {
+
+            if (numberOfHoursWorked > 10)
+                bonus *= 2;
+
+            Console.WriteLine($"The employee got a bonus of {bonus}");
+            return bonus;
+        }
+
         public double ReceiveWage(bool resetHours = true)
         {
             wage = numberOfHoursWorked * hourlyRate;
