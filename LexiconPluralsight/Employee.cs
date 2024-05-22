@@ -54,6 +54,21 @@ namespace LexiconPluralsight
             return bonus;
         }
 
+        public int CalculateBonusAndBonusTax(int bonus, ref int bonusTax)
+        {
+            if(numberOfHoursWorked > 10)
+            {
+                bonus *= 2;
+            }
+            if(bonus >= 200)
+            {
+                bonusTax = bonus / 10;
+                bonus -= bonusTax;
+            }
+            Console.WriteLine($"The employee get a bonus of {bonus} ant the ta ont the bonus is {bonusTax}");
+            return bonus;
+        }
+
         public double ReceiveWage(bool resetHours = true)
         {
             wage = numberOfHoursWorked * hourlyRate;

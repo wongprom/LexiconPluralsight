@@ -15,7 +15,8 @@ double recivedWageJane = jane.ReceiveWage(true);
 Console.WriteLine($"Wage paid (message from Program): {recivedWageJane}");*/
 jane.PerformWork(50);
 int minimumBonus = 100;
-int recivedBonus = jane.CalculateBonus(minimumBonus);
+int bonusTax = 0;
+int recivedBonus = jane.CalculateBonusAndBonusTax(minimumBonus,ref bonusTax);
 Console.WriteLine($"The minimum bonus is {minimumBonus} and {jane.firstName} has revived a bonus of {recivedBonus}");
 
 
