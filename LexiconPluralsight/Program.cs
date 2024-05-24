@@ -1,4 +1,5 @@
-﻿using LexiconPluralsight;
+﻿using LexiconPluralsight.HR;
+using LexiconPluralsight.Account;
 
 Console.WriteLine("Create an employee");
 Console.WriteLine("-----------------");
@@ -21,3 +22,8 @@ WorkTask task;
 task.description = "bake bread";
 task.hours = 1;
 task.PerformWorkTask();
+Customer customer = new Customer();
+customer.CustomerId = "34";
+customer.Name = "Jimmy";
+
+

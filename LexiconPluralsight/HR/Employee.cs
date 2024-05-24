@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LexiconPluralsight
+namespace LexiconPluralsight.HR
 {
     internal class Employee
     {
-        public string firstName = String.Empty;
-        public string lastName = String.Empty;
+        public string firstName = string.Empty;
+        public string lastName = string.Empty;
         public int numberOfHoursWorked = 0;
         public double wage;
         public double hourlyRate;
@@ -30,14 +30,14 @@ namespace LexiconPluralsight
 
         //Constructor overload (default values)
         public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0, EmployeeType.StoreManager)
-        {    
+        {
         }
 
         //Methods
         public void PerformWork()
         {
             PerformWork(MINIMAL_HOURS_WORKED_UNIT);
-           
+
         }
         //Overload Method
         public void PerformWork(int numberOfHours)
@@ -63,14 +63,14 @@ namespace LexiconPluralsight
             {
                 bonus *= 2;
             }
-            if(bonus >= 200)
+            if (bonus >= 200)
             {
                 bonusTax = bonus / 10;
                 bonus -= bonusTax;
             }
             Console.WriteLine($"The employee get a bonus of {bonus} ant the ta ont the bonus is {bonusTax}");
             return bonus;
-        } 
+        }
 
         public double ReceiveWage(bool resetHours = true)
         {
@@ -100,9 +100,9 @@ namespace LexiconPluralsight
             Console.WriteLine($"Hour Rate: {hourlyRate}");
         }
 
-        
-      
 
-        
+
+
+
     }
 }
