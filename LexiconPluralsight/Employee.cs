@@ -14,20 +14,22 @@ namespace LexiconPluralsight
         public double wage;
         public double hourlyRate;
         public DateTime birthDay;
+        public EmployeeType employeeType;
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
         //Constructor
-        public Employee(string first, string last, DateTime bd, double rate) 
+        public Employee(string first, string last, DateTime bd, double rate, EmployeeType empType)
         {
             firstName = first;
             lastName = last;
             birthDay = bd;
             hourlyRate = rate;
+            employeeType = empType;
         }
 
-        //Constructor overload
-        public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0)
+        //Constructor overload (default values)
+        public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0, EmployeeType.StoreManager)
         {    
         }
 
@@ -72,7 +74,16 @@ namespace LexiconPluralsight
 
         public double ReceiveWage(bool resetHours = true)
         {
-            wage = numberOfHoursWorked * hourlyRate;
+            if (employeeType == EmployeeType.Manager)
+            {
+                Console.WriteLine($"AN etra was added to the wage since {firstName} is a manager!");
+                wage = numberOfHoursWorked * hourlyRate * 1.25;
+            }
+            else
+            {
+                wage = numberOfHoursWorked * hourlyRate;
+            }
+
             Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hours of work.");
             if (resetHours)
             {
