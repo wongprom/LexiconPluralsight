@@ -10,7 +10,7 @@ Employee jane = new Employee("Jane", "Doe", new DateTime(1950, 1, 30), 25, Emplo
 Console.WriteLine("Create an employee");
 Console.WriteLine("-----------------");
 Console.WriteLine();
-Employee john = new("John", "Doe", new DateTime(1990, 4, 28), 50, EmployeeType.Research);
+Employee john = new("John", "Doe", new DateTime(1990, 4, 28), null, EmployeeType.Research);
 
         
 #region First run Jane

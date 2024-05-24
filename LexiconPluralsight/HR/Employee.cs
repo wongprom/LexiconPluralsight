@@ -14,7 +14,7 @@ namespace LexiconPluralsight.HR
         public string lastName = string.Empty;
         public int numberOfHoursWorked = 0;
         public double wage;
-        public double hourlyRate;
+        public double? hourlyRate;
         public DateTime birthDay;
         public EmployeeType employeeType;
 
@@ -22,12 +22,12 @@ namespace LexiconPluralsight.HR
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
         //Constructor
-        public Employee(string first, string last, DateTime bd, double rate, EmployeeType empType)
+        public Employee(string first, string last, DateTime bd, double? rate, EmployeeType empType)
         {
             firstName = first;
             lastName = last;
             birthDay = bd;
-            hourlyRate = rate;
+            hourlyRate = rate ?? 10;// if rate is null, set rate to 10
             employeeType = empType;
         }
 
@@ -82,11 +82,11 @@ namespace LexiconPluralsight.HR
             if (employeeType == EmployeeType.Manager)
             {
                 Console.WriteLine($"AN etra was added to the wage since {firstName} is a manager!");
-                wageBeforeTax = numberOfHoursWorked * hourlyRate * 1.25;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value * 1.25;
             }
             else
             {
-                wageBeforeTax = numberOfHoursWorked * hourlyRate;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value;
             }
 
             double taxAmount = wageBeforeTax * taxRate;
