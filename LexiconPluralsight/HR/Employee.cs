@@ -82,7 +82,7 @@ namespace LexiconPluralsight.HR
             if (employeeType == EmployeeType.Manager)
             {
                 Console.WriteLine($"AN etra was added to the wage since {firstName} is a manager!");
-                wage = numberOfHoursWorked * hourlyRate * 1.25;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate * 1.25;
             }
             else
             {

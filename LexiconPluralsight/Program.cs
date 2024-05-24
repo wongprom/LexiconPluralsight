@@ -12,7 +12,7 @@ Console.WriteLine("-----------------");
 Console.WriteLine();
 Employee john = new("John", "Doe", new DateTime(1990, 4, 28), 50, EmployeeType.Research);
 
-
+        
 #region First run Jane
 jane.PerformWork();
 jane.PerformWork();
