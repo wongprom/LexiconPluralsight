@@ -8,6 +8,8 @@ namespace LexiconPluralsight.HR
 {
     internal class Employee
     {
+        public static double taxRate = 0.15;
+
         public string firstName = string.Empty;
         public string lastName = string.Empty;
         public int numberOfHoursWorked = 0;
@@ -16,8 +18,6 @@ namespace LexiconPluralsight.HR
         public DateTime birthDay;
         public EmployeeType employeeType;
 
-        // Static, Used on class level, not on instance/each object level.
-        public static double taxRate = 0.15;
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
@@ -98,6 +98,11 @@ namespace LexiconPluralsight.HR
                 numberOfHoursWorked = 0;
             }
             return wage;
+        }
+
+        public static void DisplayTaxRate()
+        {
+            Console.WriteLine($"The current tax rate is {taxRate}");
         }
 
         public void DisplayEmployeeDetails()
