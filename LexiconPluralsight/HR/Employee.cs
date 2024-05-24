@@ -16,6 +16,9 @@ namespace LexiconPluralsight.HR
         public DateTime birthDay;
         public EmployeeType employeeType;
 
+        // Static, Used on class level, not on instance/each object level.
+        public static double taxRate = 0.15;
+
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
         //Constructor
@@ -74,6 +77,8 @@ namespace LexiconPluralsight.HR
 
         public double ReceiveWage(bool resetHours = true)
         {
+            double wageBeforeTax = 0.0;
+
             if (employeeType == EmployeeType.Manager)
             {
                 Console.WriteLine($"AN etra was added to the wage since {firstName} is a manager!");
@@ -81,8 +86,11 @@ namespace LexiconPluralsight.HR
             }
             else
             {
-                wage = numberOfHoursWorked * hourlyRate;
+                wageBeforeTax = numberOfHoursWorked * hourlyRate;
             }
+
+            double taxAmount = wageBeforeTax * taxRate;
+            wage = wageBeforeTax - taxAmount;
 
             Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hours of work.");
             if (resetHours)
@@ -98,6 +106,7 @@ namespace LexiconPluralsight.HR
             Console.WriteLine($"Last name: {lastName}");
             Console.WriteLine($"Birthday: {birthDay.ToShortDateString()}");
             Console.WriteLine($"Hour Rate: {hourlyRate}");
+            Console.WriteLine($"Tax Rate: {taxRate}");
         }
 
 
