@@ -35,6 +35,7 @@ Account account = new Account("111222");*/
 //account.AccountNumber = "657657567657";// error. Cant change after its been instanciate.
 
 // ----------------------------------------------------------------ARRAYS----------------------------------------
+/*
 int[] sampleArray1 = new int[5];
 int[] sampleArray2 = new int[] { 1, 2, 3, 4, 5 };
 //int[] sampleArray3 = new int [5] {1,2,3,4,5,6};
@@ -84,7 +85,7 @@ for (int i = 0; i < employeeIdsCopy.Length; i++)
     Console.WriteLine($"ID {i + 1} : {employeeIdsCopy[i]}");
 
 }
-
+*/
 
 /*Employee bethany = new Employee("Bethany", "Smith", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
 Employee george = new("George", "Jones", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
@@ -114,3 +115,58 @@ foreach (Employee e in employees)
 }*/
 
 // ----------------------------------------------------------------ARRAYS-END---------------------------------------
+// ----------------------------------------------------------------COLLECTIONS---------------------------------------
+
+List<int> employeeIds = new List<int>();
+
+
+employeeIds.Add(new Random().Next(25));
+employeeIds.Add(new Random().Next(25));
+employeeIds.Add(new Random().Next(25));
+employeeIds.Add(new Random().Next(25));
+employeeIds.Add(new Random().Next(25));
+employeeIds.Add(new Random().Next(25));
+
+if (employeeIds.Contains(34))
+{
+    Console.WriteLine("34 is found");
+}
+
+int currentAmountOfEmployees = employeeIds.Count;
+
+var employeesIdsArray = employeeIds.ToArray();
+
+employeeIds.Clear();
+
+Console.WriteLine("How many employees ID's do you want to register?");
+
+int length = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < length; i++)
+{
+    Console.Write("Enter the employee ID: ");
+    int id = int.Parse(Console.ReadLine());
+    employeeIds.Add(id);
+}
+
+Employee bethany = new Employee("Bethany", "Smith", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
+Employee george = new("George", "Jones", new DateTime(1984, 3, 28), 30, EmployeeType.Research);
+Employee mary = new Employee("Mary", "Jones", new DateTime(1965, 1, 16), 30, EmployeeType.Manager);
+Employee bobJunior = new Employee("Bob", "Spencer", new DateTime(1988, 1, 23), 17, EmployeeType.Research);
+Employee kevin = new Employee("Kevin", "Marks", new DateTime(1953, 12, 12), 10, EmployeeType.StoreManager);
+Employee kate = new Employee("Kate", "Greggs", new DateTime(1993, 8, 8), 10, EmployeeType.StoreManager);
+Employee kim = new Employee("Kim", "Jacobs", new DateTime(1975, 5, 14), 22, EmployeeType.StoreManager);
+
+List<Employee> employees = new List<Employee>();
+employees.Add(bethany);
+employees.Add(george);
+employees.Add(mary);
+employees.Add(bobJunior);
+employees.Add(kate);
+employees.Add(kim);
+
+foreach (Employee employee in employees)
+{
+   employee.DisplayEmployeeDetails();
+    Console.WriteLine();
+}
