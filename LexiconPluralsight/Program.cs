@@ -23,3 +23,5 @@ mary.PerformWork(6);
 mary.PerformWork(2);
 mary.PerformWork(9);
 mary.ReceiveWage();
+mary.AttendManagementMeeting();
+

@@ -41,7 +41,7 @@ namespace LexiconPluralsight.HR
         public int NumberOfHoursWorked
         {
             get { return numberOfHoursWorked; }
-          private  set
+          protected  set
             {
                 numberOfHoursWorked = value;
             }

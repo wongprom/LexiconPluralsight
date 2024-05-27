@@ -11,5 +11,11 @@ namespace LexiconPluralsight.HR
         public Manager(string firstName, string lastName, DateTime birthday, double? hourlyrate) : base(firstName, lastName, birthday, hourlyrate)
         {
         }
+
+        public void AttendManagementMeeting()
+        {
+            NumberOfHoursWorked += 10;
+            Console.WriteLine($"Manager {FirstName} {LastName} is now attending a long meeting that could have been an email");
+        }
     }
 }
