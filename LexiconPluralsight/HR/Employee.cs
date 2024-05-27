@@ -90,17 +90,17 @@ namespace LexiconPluralsight.HR
         }
 
         //Constructor
-        public Employee(string first, string last, DateTime bd, double? rate, EmployeeType empType)
+        public Employee(string firstName, string lastName, DateTime birthday, double? hourlyrate, EmployeeType employeeType)
         {
-            firstName = first;
-            lastName = last;
-            birthDay = bd;
-            hourlyRate = rate ?? 10;// if rate is null, set rate to 10
-            employeeType = empType;
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDay = birthday;
+            HourlyRate = hourlyrate ?? 10;// if rate is null, set rate to 10
+            EmployeeType = employeeType;
         }
 
         //Constructor overload (default values)
-        public Employee(string first, string last, DateTime bd) : this(first, last, bd, 0, EmployeeType.StoreManager)
+        public Employee(string firstName, string lastName, DateTime birthday) : this(firstName, lastName, birthday, 0, EmployeeType.StoreManager)
         {
         }
 
@@ -113,14 +113,14 @@ namespace LexiconPluralsight.HR
         //Overload Method
         public void PerformWork(int numberOfHours)
         {
-            numberOfHoursWorked += numberOfHours;
-            Console.WriteLine($"{firstName} {lastName} has worked for {numberOfHours} hour(s)!");
+            NumberOfHoursWorked += numberOfHours;
+            Console.WriteLine($"{FirstName} {LastName} has worked for {numberOfHours} hour(s)!");
         }
 
         public int CalculateBonus(int bonus)
         {
 
-            if (numberOfHoursWorked > 10)
+            if (NumberOfHoursWorked > 10)
                 bonus *= 2;
 
             Console.WriteLine($"The employee got a bonus of {bonus}");
@@ -130,7 +130,7 @@ namespace LexiconPluralsight.HR
         public int CalculateBonusAndBonusTax(int bonus, out int bonusTax)
         {
             bonusTax = 0;
-            if (numberOfHoursWorked > 10)
+            if (NumberOfHoursWorked > 10)
             {
                 bonus *= 2;
             }
@@ -147,23 +147,23 @@ namespace LexiconPluralsight.HR
         {
             double wageBeforeTax = 0.0;
 
-            if (employeeType == EmployeeType.Manager)
+            if (EmployeeType == EmployeeType.Manager)
             {
-                Console.WriteLine($"AN etra was added to the wage since {firstName} is a manager!");
-                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value * 1.25;
+                Console.WriteLine($"AN etra was added to the wage since {FirstName} is a manager!");
+                wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value * 1.25;
             }
             else
             {
-                wageBeforeTax = numberOfHoursWorked * hourlyRate.Value;
+                wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;
             }
 
             double taxAmount = wageBeforeTax * taxRate;
             wage = wageBeforeTax - taxAmount;
 
-            Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {numberOfHoursWorked} hours of work.");
+            Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {NumberOfHoursWorked} hours of work.");
             if (resetHours)
             {
-                numberOfHoursWorked = 0;
+                NumberOfHoursWorked = 0;
             }
             return wage;
         }
@@ -175,10 +175,10 @@ namespace LexiconPluralsight.HR
 
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"First name: {firstName}");
-            Console.WriteLine($"Last name: {lastName}");
-            Console.WriteLine($"Birthday: {birthDay.ToShortDateString()}");
-            Console.WriteLine($"Hour Rate: {hourlyRate}");
+            Console.WriteLine($"First name: {FirstName}");
+            Console.WriteLine($"Last name: {LastName}");
+            Console.WriteLine($"Birthday: {BirthDay.ToShortDateString()}");
+            Console.WriteLine($"Hour Rate: {HourlyRate}");
             Console.WriteLine($"Tax Rate: {taxRate}");
         }
 
