@@ -18,8 +18,6 @@ namespace LexiconPluralsight.HR
         private double? hourlyRate;
 
         private DateTime birthDay;
-        private EmployeeType employeeType;
-
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
@@ -80,27 +78,18 @@ namespace LexiconPluralsight.HR
                 birthDay = value;
             }
         }
-        public EmployeeType EmployeeType
-        {
-            get { return employeeType; }
-            set
-            {
-                employeeType = value;
-            }
-        }
 
         //Constructor
-        public Employee(string firstName, string lastName, DateTime birthday, double? hourlyrate, EmployeeType employeeType)
+        public Employee(string firstName, string lastName, DateTime birthday, double? hourlyrate)
         {
             FirstName = firstName;
             LastName = lastName;
             BirthDay = birthday;
             HourlyRate = hourlyrate ?? 10;// if rate is null, set rate to 10
-            EmployeeType = employeeType;
         }
 
         //Constructor overload (default values)
-        public Employee(string firstName, string lastName, DateTime birthday) : this(firstName, lastName, birthday, 0, EmployeeType.StoreManager)
+        public Employee(string firstName, string lastName, DateTime birthday) : this(firstName, lastName, birthday, 0)
         {
         }
 
@@ -145,27 +134,18 @@ namespace LexiconPluralsight.HR
 
         public double ReceiveWage(bool resetHours = true)
         {
-            double wageBeforeTax = 0.0;
-
-            if (EmployeeType == EmployeeType.Manager)
-            {
-                Console.WriteLine($"AN etra was added to the wage since {FirstName} is a manager!");
-                wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value * 1.25;
-            }
-            else
-            {
-                wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;
-            }
-
+            double wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;
             double taxAmount = wageBeforeTax * taxRate;
-            wage = wageBeforeTax - taxAmount;
 
-            Console.WriteLine($"{firstName} {lastName} has received a wage of {wage} for {NumberOfHoursWorked} hours of work.");
+            Wage = wageBeforeTax - taxAmount;
+
+            Console.WriteLine($"{FirstName} {LastName} has received a wage of {Wage} for {NumberOfHoursWorked} hours of work.");
+
             if (resetHours)
             {
                 NumberOfHoursWorked = 0;
             }
-            return wage;
+            return Wage;
         }
 
         public static void DisplayTaxRate()
