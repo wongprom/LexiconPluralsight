@@ -11,12 +11,14 @@ namespace LexiconPluralsight.HR
         public static double taxRate = 0.15;
 
         private string firstName = string.Empty;
-        public string lastName = string.Empty;
-        public int numberOfHoursWorked = 0;
-        public double wage;
-        public double? hourlyRate;
-        public DateTime birthDay;
-        public EmployeeType employeeType;
+        private string lastName = string.Empty;
+
+        private int numberOfHoursWorked = 0;
+        private double wage;
+        private double? hourlyRate;
+
+        private DateTime birthDay;
+        private EmployeeType employeeType;
 
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
@@ -28,6 +30,62 @@ namespace LexiconPluralsight.HR
             set 
             { 
                 firstName = value; 
+            }
+        }
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                lastName = value;
+            }
+        }
+        public int NumberOfHoursWorked
+        {
+            get { return numberOfHoursWorked; }
+            set
+            {
+                numberOfHoursWorked = value;
+            }
+        }  
+        public double Wage
+        {
+            get { return wage; }
+            set
+            {
+                wage = value;
+            }
+        }    
+        public double? HourlyRate
+        {
+            get { return hourlyRate; }
+            set
+            {
+
+                if (hourlyRate > 0)
+                {
+                    hourlyRate = 0;
+                }
+                else
+                {
+                hourlyRate = value;
+                }
+            }
+        }
+        public DateTime BirthDay
+        {
+            get { return birthDay; }
+            set
+            {
+                birthDay = value;
+            }
+        }
+        public EmployeeType EmployeeType
+        {
+            get { return employeeType; }
+            set
+            {
+                employeeType = value;
             }
         }
 
