@@ -21,6 +21,9 @@ namespace LexiconPluralsight.HR
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
 
+        private Address adress;
+
+
         // Property
         public string FirstName
         { 
@@ -79,6 +82,14 @@ namespace LexiconPluralsight.HR
             }
         }
 
+        public Address Adress
+        {
+            get { return adress; }
+            set
+            {
+                adress = value;
+            }
+        }
         //Constructor
         public Employee(string firstName, string lastName, DateTime birthday, double? hourlyrate)
         {
@@ -91,6 +102,17 @@ namespace LexiconPluralsight.HR
         //Constructor overload (default values)
         public Employee(string firstName, string lastName, DateTime birthday) : this(firstName, lastName, birthday, 0)
         {
+        }
+
+        public Employee(string firstName, string lastName, DateTime birthday, double? hourlyrate, string street, string houseNumber, string zipCode, string city )
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDay = birthday;
+            HourlyRate = hourlyrate ?? 10;// if rate is null, set rate to 10
+
+            Adress = new Address(street, houseNumber, zipCode, city);
+
         }
 
         //Methods

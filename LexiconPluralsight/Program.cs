@@ -33,3 +33,8 @@ Console.WriteLine();
 bobJunior.ResearcherNewPieTastes(5);
 bobJunior.ResearcherNewPieTastes(5);
 
+Console.WriteLine("Create an employee with address");
+Console.WriteLine("-----------------");
+Console.WriteLine();
+Employee jake = new Employee("Jake", "Olsson", new DateTime(1990, 9, 3), 10, "New Street", "69", "12345", "Pie Ville");
+string streetName = jake.Adress.Street;
