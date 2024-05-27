@@ -10,7 +10,7 @@ namespace LexiconPluralsight.HR
     {
         public static double taxRate = 0.15;
 
-        public string firstName = string.Empty;
+        private string firstName = string.Empty;
         public string lastName = string.Empty;
         public int numberOfHoursWorked = 0;
         public double wage;
@@ -20,6 +20,16 @@ namespace LexiconPluralsight.HR
 
 
         const int MINIMAL_HOURS_WORKED_UNIT = 1;
+
+        // Property
+        public string FirstName
+        { 
+            get { return firstName; }
+            set 
+            { 
+                firstName = value; 
+            }
+        }
 
         //Constructor
         public Employee(string first, string last, DateTime bd, double? rate, EmployeeType empType)
