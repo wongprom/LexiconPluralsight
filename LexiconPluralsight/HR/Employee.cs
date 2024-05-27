@@ -154,6 +154,11 @@ namespace LexiconPluralsight.HR
             return bonus;
         }
 
+        public virtual void GiveBonus()
+        {
+            Console.WriteLine($"{FirstName} {LastName} revived a generic bonus of 100!");
+        }
+
         public double ReceiveWage(bool resetHours = true)
         {
             double wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;

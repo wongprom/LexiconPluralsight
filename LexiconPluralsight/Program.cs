@@ -23,7 +23,8 @@ mary.PerformWork(6);
 mary.PerformWork(2);
 mary.PerformWork(9);
 mary.ReceiveWage();
-mary.AttendManagementMeeting();
+//mary.AttendManagementMeeting();
+mary.GiveBonus();
 
 Console.WriteLine();
 Console.WriteLine("Create an Junirresearcher");
@@ -38,3 +39,22 @@ Console.WriteLine("-----------------");
 Console.WriteLine();
 Employee jake = new Employee("Jake", "Olsson", new DateTime(1990, 9, 3), 10, "New Street", "69", "12345", "Pie Ville");
 string streetName = jake.Adress.Street;
+
+Console.WriteLine();
+Console.WriteLine("Create an Junirresearcher");
+Console.WriteLine("-----------------");
+StoreManager kate = new("Kate", "Jacobsson", new DateTime(1990, 8, 30), 50);
+Console.WriteLine();
+
+List<Employee> employees = new List<Employee>();
+employees.Add(jane);
+employees.Add(jake);
+employees.Add(bobJunior);
+employees.Add(kate);
+employees.Add(mary);
+
+foreach (Employee employee in employees)
+{
+    employee.DisplayEmployeeDetails();
+    employee.GiveBonus();
+}
