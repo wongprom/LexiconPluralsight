@@ -26,3 +26,5 @@ jane.ReceiveWage();
 jane.FirstName = "Sara";
 string fn  = jane.FirstName;
 Console.WriteLine($"Jane has change name to {fn}");
+jane.Wage = 2000;
+jane.NumberOfHoursWorked = 345;

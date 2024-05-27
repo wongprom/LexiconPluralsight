@@ -43,7 +43,7 @@ namespace LexiconPluralsight.HR
         public int NumberOfHoursWorked
         {
             get { return numberOfHoursWorked; }
-            set
+          private  set
             {
                 numberOfHoursWorked = value;
             }
@@ -51,7 +51,7 @@ namespace LexiconPluralsight.HR
         public double Wage
         {
             get { return wage; }
-            set
+           private set
             {
                 wage = value;
             }
