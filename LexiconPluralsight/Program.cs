@@ -25,3 +25,11 @@ mary.PerformWork(9);
 mary.ReceiveWage();
 mary.AttendManagementMeeting();
 
+Console.WriteLine();
+Console.WriteLine("Create an Junirresearcher");
+Console.WriteLine("-----------------");
+JuniorResearcher bobJunior = new("Bob", "Andersson", new DateTime(1980, 8, 30), 50);
+Console.WriteLine();
+bobJunior.ResearcherNewPieTastes(5);
+bobJunior.ResearcherNewPieTastes(5);
+
