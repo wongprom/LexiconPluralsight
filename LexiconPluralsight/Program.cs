@@ -4,7 +4,7 @@ using LexiconPluralsight.Account;
 Console.WriteLine("Create an employee");
 Console.WriteLine("-----------------");
 Console.WriteLine();
-Employee jane = new Employee("Jane", "Doe", new DateTime(1950, 1, 30), 25);
+IEmployee jane = new Employee("Jane", "Doe", new DateTime(1950, 1, 30), 25);
 jane.DisplayEmployeeDetails();
 jane.PerformWork(4);
 jane.PerformWork(6);
@@ -15,7 +15,7 @@ jane.ReceiveWage();
 Console.WriteLine();
 Console.WriteLine("Create an manager");
 Console.WriteLine("-----------------");
-Manager mary = new("Mary", "Pettersson", new DateTime(1956, 2, 25), 30);
+IEmployee mary = new Employee("Mary", "Pettersson", new DateTime(1956, 2, 25), 30);
 Console.WriteLine();
 mary.DisplayEmployeeDetails();
 mary.PerformWork(4);
@@ -29,10 +29,10 @@ mary.GiveBonus();
 Console.WriteLine();
 Console.WriteLine("Create an Junirresearcher");
 Console.WriteLine("-----------------");
-JuniorResearcher bobJunior = new("Bob", "Andersson", new DateTime(1980, 8, 30), 50);
+IEmployee bobJunior = new JuniorResearcher("Bob", "Andersson", new DateTime(1980, 8, 30), 50);
 Console.WriteLine();
-bobJunior.ResearcherNewPieTastes(5);
-bobJunior.ResearcherNewPieTastes(5);
+/*bobJunior.ResearcherNewPieTastes(5);
+bobJunior.ResearcherNewPieTastes(5);*/
 
 Console.WriteLine("Create an employee with address");
 Console.WriteLine("-----------------");
@@ -46,7 +46,7 @@ Console.WriteLine("-----------------");
 StoreManager kate = new("Kate", "Jacobsson", new DateTime(1990, 8, 30), 50);
 Console.WriteLine();
 
-List<Employee> employees = new List<Employee>();
+List<IEmployee> employees = new List<IEmployee>();
 employees.Add(jane);
 employees.Add(jake);
 employees.Add(bobJunior);
@@ -57,4 +57,5 @@ foreach (Employee employee in employees)
 {
     employee.DisplayEmployeeDetails();
     employee.GiveBonus();
+    employee.GiveCompliment();
 }

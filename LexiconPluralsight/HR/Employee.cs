@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LexiconPluralsight.HR
 {
-    internal class Employee
+    internal class Employee : IEmployee
     {
         public static double taxRate = 0.15;
 
@@ -189,9 +189,9 @@ namespace LexiconPluralsight.HR
             Console.WriteLine($"Tax Rate: {taxRate}");
         }
 
-
-
-
-
+        public void GiveCompliment()
+        {
+            Console.WriteLine($"You've done a great job, {FirstName}");
+        }
     }
 }
