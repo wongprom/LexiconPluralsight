@@ -13,7 +13,7 @@ namespace WierdBrainCoffee.StackApp
 
         private static void StackDoublesd()
         {
-            var stack = new SimpelStack<double>();
+            var stack = new Stack<double>();
             stack.Push(1.2);
             stack.Push(2.8);
             stack.Push(3.0);
@@ -29,7 +29,7 @@ namespace WierdBrainCoffee.StackApp
         }
         private static void StackStrings()
         {
-            var stack = new SimpelStack<string>();
+            var stack = new Stack<string>();
             stack.Push("Some string");
             stack.Push("PluralSight");
 
