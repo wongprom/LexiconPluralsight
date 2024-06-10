@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LexiconPluralsight", "LexiconPluralsight\LexiconPluralsight.csproj", "{92824186-618D-49FC-8FC0-25837AF5D126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LexiconPluralsight", "LexiconPluralsight\LexiconPluralsight.csproj", "{92824186-618D-49FC-8FC0-25837AF5D126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WierdBrainCoffee.StackApp", "WierdBrainCoffee.StackApp\WierdBrainCoffee.StackApp.csproj", "{404320F0-DD4C-4138-9456-F1C1C53C702F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{92824186-618D-49FC-8FC0-25837AF5D126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92824186-618D-49FC-8FC0-25837AF5D126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92824186-618D-49FC-8FC0-25837AF5D126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{404320F0-DD4C-4138-9456-F1C1C53C702F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404320F0-DD4C-4138-9456-F1C1C53C702F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404320F0-DD4C-4138-9456-F1C1C53C702F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404320F0-DD4C-4138-9456-F1C1C53C702F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
