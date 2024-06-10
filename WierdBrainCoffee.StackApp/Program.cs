@@ -21,7 +21,7 @@ namespace WierdBrainCoffee.StackApp
             double sum = 0.0;
             while (stack.Count > 0)
             {
-                double item = stack.Pop();
+                double item = (double)stack.Pop();
                 Console.WriteLine($"Item: {item}");
                 sum += item;
             }
@@ -32,6 +32,11 @@ namespace WierdBrainCoffee.StackApp
             var stack = new SimpelStack();
             stack.Push("Some string");
             stack.Push("PluralSight");
+
+            while (stack.Count > 0)
+            {
+                Console.WriteLine(  stack.Pop());
+            }
         }
     }
 }
