@@ -3,7 +3,7 @@ using WiredBrainCoffee.StorageAp.Entities;
 
 namespace WiredBrainCoffee.StorageAp.Repositories
 {
-    public class GenericRepository<T> where T : class, IEntity
+    public class GenericRepository<T> where T : IEntity
     {
         private readonly List<T> _items = new();
 
