@@ -1,10 +1,8 @@
-﻿using WiredBrainCoffee.StorageAp.Entities;
-
-namespace WiredBrainCoffee.StorageAp.Repositories
+﻿namespace WiredBrainCoffee.StorageAp.Repositories
 {
     public class GenericRepository<T>
     {
-        private readonly List<T> items = new();
+        protected readonly List<T> items = new();
         public void Add(T item) 
         {
             items.Add(item);
@@ -18,4 +16,5 @@ namespace WiredBrainCoffee.StorageAp.Repositories
             }
         }
     }
+
 }
