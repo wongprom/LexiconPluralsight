@@ -2,10 +2,16 @@
 {
     public class GenericRepository<T>
     {
-        protected readonly List<T> items = new();
+
+        private readonly List<T> items = new();
         public void Add(T item) 
         {
             items.Add(item);
+        }
+
+        public void Remove(T item)
+        {
+            items.Remove(item);
         }
 
         public void Save()
