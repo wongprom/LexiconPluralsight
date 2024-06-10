@@ -1,8 +1,17 @@
-﻿namespace WierdBrainCoffee.StackApp
+﻿
+namespace WierdBrainCoffee.StackApp
 {
     internal class Program
     {
         static void Main(string[] args)
+        {
+            StackDoublesd();
+            StackStrings();
+            Console.ReadLine();
+        }
+
+
+        private static void StackDoublesd()
         {
             var stack = new SimpelStack();
             stack.Push(1.2);
@@ -17,7 +26,12 @@
                 sum += item;
             }
             Console.WriteLine($"Sum: {sum}");
-            Console.ReadLine();
+        }
+        private static void StackStrings()
+        {
+            var stack = new SimpelStack();
+            stack.Push("Some string");
+            stack.Push("PluralSight");
         }
     }
 }
