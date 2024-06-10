@@ -3,13 +3,13 @@ using WiredBrainCoffee.StorageAp.Entities;
 
 namespace WiredBrainCoffee.StorageAp.Repositories
 {
-    public class GenericRepository<T> where T : EntityBase
+    public class GenericRepository<T> where T : class, IEntity
     {
         private readonly List<T> _items = new();
 
         public T GetById(int id)
         {
-            return _items.Single(item => item.Id == id);
+           return _items.Single(item => item.Id == id);
         }
         public void Add(T item) 
         {
