@@ -8,10 +8,15 @@ namespace WiredBrainCoffee.StorageAp.Repositories
         private readonly DbContext _dbContext;
         private readonly DbSet<T> _dbSet;
 
+
         public SqlRepository(DbContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<T>();
+        }
+        public IEnumerable<T> GetAll()
+        {
+            return _dbSet.ToList();
         }
         public T GetById(int id)
         {
