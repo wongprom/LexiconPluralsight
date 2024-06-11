@@ -15,11 +15,13 @@ namespace WiredBrainCoffee.StorageAp
 
             var organizationRepository = new ListRepository<Organization>();
             AddOrganizations(organizationRepository);
+            WriteAllToConsole(organizationRepository);
+
 
             Console.ReadLine();
         }
 
-        private static void WriteAllToConsole(SqlRepository<Employee> employeeRepository)
+        private static void WriteAllToConsole(IReadRepository<IEntity> employeeRepository)
         {
             var items = employeeRepository.GetAll();
             foreach (var item in items)
@@ -28,9 +30,9 @@ namespace WiredBrainCoffee.StorageAp
             }
         }
 
-        private static void GetEmployeeById(IRepository<Employee> employeeRepository)
+        private static void GetEmployeeById(IRepository<Employee> repository)
         {
-            var employee = employeeRepository.GetById(2);
+            var employee = repository.GetById(2);
             Console.WriteLine($"Employee with Id 2: {employee.FirstName}");
         }
 
