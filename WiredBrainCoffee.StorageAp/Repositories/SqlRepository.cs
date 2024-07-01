@@ -3,7 +3,7 @@ using WiredBrainCoffee.StorageAp.Entities;
 
 namespace WiredBrainCoffee.StorageAp.Repositories
 {
-    public delegate void ItemAdded<T>(T item);
+    public delegate void ItemAdded< in T>(T item);
     public class SqlRepository<T> : IRepository<T> where T : class, IEntity
     {
         private readonly DbContext _dbContext;

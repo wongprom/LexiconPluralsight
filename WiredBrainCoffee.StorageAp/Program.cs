@@ -8,8 +8,8 @@ namespace WiredBrainCoffee.StorageAp
     {
         static void Main(string[] args)
         {
-            var itemAdded = new ItemAdded<Employee>(EmployeeAdded);
-            var employeeRepository = new SqlRepository<Employee>(new StorageApDbContext(),itemAdded);
+            var employeeRepository = new SqlRepository<Employee>(new StorageApDbContext(), EmployeeAdded);
+
             AddEmployees(employeeRepository);
             AddManagers(employeeRepository);
             GetEmployeeById(employeeRepository);
